@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Kartenwerkzeug</title>
-  </head>
-  <body>
-    <h1>Kartenwerkzeug</h1>
-    <div id="karte"></div>
+<html lang="de">
+    <head>
+        <title>Kartenansicht</title>
+        <meta charset="utf-8"><meta>
+    </head>
+    <body>
+        <h1>Kartenansicht</h1>
+        <label>
+            <!--Kommentar-->
+            BREITE
+            <input type="range" id="breite" min="200" max="1400" value="720" />
+            </label>
+        <div id="karte"></div>
 
-    <script type="module" src="karte.js"></script>
-  </body>
+        <script type="module" src="script.js"></script>
+    </body>
 </html>
