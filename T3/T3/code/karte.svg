@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3111.9999999999995" height="727.7777777777779">
+  <rect width="3111.9999999999995" height="727.7777777777779" fill="#f4f1ea" stroke="#222"/>
+  <circle cx="2762.6666666666665" cy="218.6666666666664" r="35.73513677041127" fill="#c0392b"/>
+  <text x="2802.401803437078" y="222.6666666666664" font-family="sans-serif" font-size="11">Changchun</text>
+  <circle cx="2564.6666666666656" cy="307.111111111111" r="10.954451150103322" fill="#c0392b"/>
+  <text x="2579.621117816769" y="311.111111111111" font-family="sans-serif" font-size="11">Peking</text>
+  <circle cx="2617.7777777777787" cy="481.33333333333337" r="9.486832980505138" fill="#c0392b"/>
+  <text x="2631.2646107582837" y="485.33333333333337" font-family="sans-serif" font-size="11">Nanjing</text>
+  <circle cx="2514.888888888889" cy="697.7777777777779" r="2.23606797749979" fill="#c0392b"/>
+  <text x="2521.124956866389" y="701.7777777777779" font-family="sans-serif" font-size="11">Hongkong</text>
+  <circle cx="2790.0000000000005" cy="451.9999999999999" r="3.1622776601683795" fill="#c0392b"/>
+  <text x="2797.162277660169" y="455.9999999999999" font-family="sans-serif" font-size="11">Jeju</text>
+  <circle cx="3081.9999999999995" cy="400.8888888888888" r="2" fill="#c0392b"/>
+  <text x="3087.9999999999995" y="404.8888888888888" font-family="sans-serif" font-size="11">Tokio</text>
+  <circle cx="195.5555555555561" cy="109.33333333333326" r="19.1049731745428" fill="#c0392b"/>
+  <text x="218.66052873009892" y="113.33333333333326" font-family="sans-serif" font-size="11">Schwäbisch Gmünd</text>
+  <circle cx="143.77777777777783" cy="49.111111111111086" r="13.416407864998739" fill="#c0392b"/>
+  <text x="161.19418564277657" y="53.111111111111086" font-family="sans-serif" font-size="11">Dortmund</text>
+  <circle cx="30" cy="108" r="2.23606797749979" fill="#c0392b"/>
+  <text x="36.236067977499786" y="112" font-family="sans-serif" font-size="11">Paris</text>
+  <circle cx="86.66666666666652" cy="30" r="1.7320508075688772" fill="#c0392b"/>
+  <text x="92.3987174742354" y="34" font-family="sans-serif" font-size="11">Amsterdam</text>
+  <circle cx="341.5555555555561" cy="122.44444444444434" r="2.23606797749979" fill="#c0392b"/>
+  <text x="347.7916235330559" y="126.44444444444434" font-family="sans-serif" font-size="11">Wien</text>
+</svg>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Karte</title>
+<style>
+  body { font-family: sans-serif; margin: 20px; }
+  label { display: block; margin-bottom: 10px; }
+  svg { border: 1px solid #222; background: #f4f1ea; display: block; }
+</style>
+</head>
+<body>
+<label>
+  Skalierung:
+  <input id="regler" type="range" min="1" max="30" step="1" value="4">
+  <span id="wert">4</span>
+</label>
+<svg id="karte" xmlns="http://www.w3.org/2000/svg" width="1200" height="800"></svg>
+
+<script>
+const orte = [{"name":"Changchun","r":35.73513677041127,"dx":150.83333333333337,"dy":-18.15277777777783},{"name":"Peking","r":10.954451150103322,"dx":126.08333333333326,"dy":-7.097222222222257},{"name":"Nanjing","r":9.486832980505138,"dx":132.7222222222224,"dy":14.680555555555543},{"name":"Hongkong","r":2.23606797749979,"dx":119.8611111111112,"dy":41.736111111111114},{"name":"Jeju","r":3.1622776601683795,"dx":154.2500000000001,"dy":11.013888888888857},{"name":"Tokio","r":2,"dx":190.75,"dy":4.624999999999972},{"name":"Schwäbisch Gmünd","r":19.1049731745428,"dx":-170.05555555555543,"dy":-31.81944444444447},{"name":"Dortmund","r":13.416407864998739,"dx":-176.52777777777771,"dy":-39.34722222222224},{"name":"Paris","r":2.23606797749979,"dx":-190.74999999999994,"dy":-31.98611111111113},{"name":"Amsterdam","r":1.7320508075688772,"dx":-183.66666666666663,"dy":-41.73611111111113},{"name":"Wien","r":2.23606797749979,"dx":-151.80555555555543,"dy":-30.180555555555586}];
+const BREITE_SVG = 1200;
+const HOEHE_SVG = 800;
+const NS = "http://www.w3.org/2000/svg";
+
+const svg = document.getElementById("karte");
+const regler = document.getElementById("regler");
+const wert = document.getElementById("wert");
+
+// Kreise und Beschriftungen nur einmal anlegen
+const elemente = orte.map((ort) => {
+  const kreis = document.createElementNS(NS, "circle");
+  kreis.setAttribute("r", ort.r);
+  kreis.setAttribute("fill", "#c0392b");
+
+  const text = document.createElementNS(NS, "text");
+  text.setAttribute("font-family", "sans-serif");
+  text.setAttribute("font-size", "11");
+  text.textContent = ort.name;
+
+  svg.append(kreis, text);
+  return { ort, kreis, text };
+});
+
+// Verschiebung durch Ziehen mit der Maus, gemessen in Kartenkoordinaten
+// (bei Skalierung 1). So bleibt beim Zoomen der Punkt in der Bildmitte gleich.
+let verschiebungX = 0;
+let verschiebungY = 0;
+
+// Nur die Positionen neu berechnen (Radius und Schriftgröße bleiben)
+function zeichne() {
+  const skalierung = Number(regler.value);
+  for (const { ort, kreis, text } of elemente) {
+    const x = BREITE_SVG / 2 + (ort.dx + verschiebungX) * skalierung;
+    const y = HOEHE_SVG / 2 + (ort.dy + verschiebungY) * skalierung;
+    kreis.setAttribute("cx", x);
+    kreis.setAttribute("cy", y);
+    text.setAttribute("x", x + ort.r + 4);
+    text.setAttribute("y", y + 4);
+  }
+  wert.textContent = skalierung;
+}
+
+regler.addEventListener("input", zeichne);
+
+// Ziehen mit der Maus (Pointer-Events funktionieren auch mit Touch)
+let ziehen = false;
+let letzteX = 0;
+let letzteY = 0;
+
+svg.style.cursor = "grab";
+svg.style.touchAction = "none";
+
+svg.addEventListener("pointerdown", (e) => {
+  ziehen = true;
+  letzteX = e.clientX;
+  letzteY = e.clientY;
+  svg.setPointerCapture(e.pointerId);
+  svg.style.cursor = "grabbing";
+});
+
+svg.addEventListener("pointermove", (e) => {
+  if (!ziehen) return;
+  const skalierung = Number(regler.value);
+  // Mausbewegung in Pixeln durch Skalierung teilen = Bewegung auf der Karte
+  verschiebungX += (e.clientX - letzteX) / skalierung;
+  verschiebungY += (e.clientY - letzteY) / skalierung;
+  letzteX = e.clientX;
+  letzteY = e.clientY;
+  zeichne();
+});
+
+function ziehenEnde() {
+  ziehen = false;
+  svg.style.cursor = "grab";
+}
+svg.addEventListener("pointerup", ziehenEnde);
+svg.addEventListener("pointercancel", ziehenEnde);
+
+zeichne();
+</script>
+</body>
+</html>
