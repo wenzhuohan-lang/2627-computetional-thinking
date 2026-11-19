@@ -1,0 +1,14 @@
+[
+  { "id": "changchun", "name": "Changchun", "lat": 43.88, "lon": 125.32, "farbe": "#c0392b" },
+  { "id": "peking", "name": "Peking", "lat": 39.90, "lon": 116.40, "farbe": "#c0392b" },
+  { "id": "nanjing", "name": "Nanjing", "lat": 32.06, "lon": 118.80, "farbe": "#c0392b" },
+  { "id": "hongkong", "name": "Hongkong", "lat": 22.32, "lon": 114.17, "farbe": "#c0392b" },
+  { "id": "jeju", "name": "Jeju", "lat": 33.50, "lon": 126.53, "farbe": "#c0392b" },
+  { "id": "tokio", "name": "Tokio", "lat": 35.68, "lon": 139.69, "farbe": "#c0392b" },
+  { "id": "gmuend", "name": "Schwäbisch Gmünd", "lat": 48.80, "lon": 9.79, "farbe": "#c0392b" },
+  { "id": "dortmund", "name": "Dortmund", "lat": 51.51, "lon": 7.47, "farbe": "#c0392b" },
+  { "id": "paris", "name": "Paris", "lat": 48.86, "lon": 2.35, "farbe": "#c0392b" },
+  { "id": "amsterdam", "name": "Amsterdam", "lat": 52.37, "lon": 4.90, "farbe": "#c0392b" },
+  { "id": "wien", "name": "Wien", "lat": 48.21, "lon": 16.37, "farbe": "#c0392b" },
+  { "id": "harbin", "name": "Harbin", "lat": 45.80, "lon": 126.53, "farbe": "#c0392b" }
+]

@@ -1,0 +1,8 @@
+[
+  { "id": "nullinsel", "name": "Nullinsel", "lat": 0, "lon": 0, "farbe": "#999999" },
+  { "id": "gmuend", "name": "Schwäbisch Gmünd", "lat": 48.8, "lon": 9.79, "farbe": "#c0392b" },
+  { "id": "stuttgart", "name": "Stuttgart", "lat": 48.7758, "lon": 9.1829, "farbe": "#c0392b" },
+  { "id": "kapstadt", "name": "Kapstadt", "lat": -33.92, "lon": 18.42, "farbe": "#2980b9" },
+  { "id": "longyearbyen", "name": "Longyearbyen", "lat": 78.22, "lon": 15.63, "farbe": "#16a085" },
+  { "id": "nyc", "name": "New York", "lat": 40.69, "lon": -74.14, "farbe": "#8e44ad" }
+]

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kartenwerkzeug</title>
+  </head>
+  <body>
+    <h1>Kartenwerkzeug</h1>
+
+    <label>
+      Breite
+      <input type="range" id="breite" min="200" max="6000" value="720" style="width: 80vw" />
+    </label>
+
+    <label>
+      Ort
+      <select id="ort-auswahl">
+        <option value="">– Ort wählen –</option>
+      </select>
+    </label>
+
+    <!-- Fenster auf die Karte: scrollbar, damit wir einen Ort in die Mitte schieben können -->
+    <div id="karte" style="overflow: auto; max-width: 100%; max-height: 80vh"></div>
+
+    <script type="module" src="karte.js"></script>
+  </body>
+</html>
